@@ -1,0 +1,29 @@
+[
+    ["vhost",
+        {
+            "id": "default",
+            "maxConnections": 100,
+            "maxConnectionsPerUser": 10,
+            "maxConnectionsPerHost": 10,
+            "allowUnknownUser": false,
+            "groups": {
+                "users": {
+                    "users": "user1,mapped1",
+                    "remoteHosts": "*",
+                    "maxSessions": 100,
+                    "maxSenders": 0,
+                    "maxReceivers": 100,
+                    "sources": "address.*",
+                    "targets": "address.*"
+                },
+                "admins": {
+                    "users": "admin,user2,mapped2",
+                    "remoteHosts": "*",
+                    "allowDynamicSource": true,
+                    "sources": "$management",
+                    "targets": "$management"
+                }
+            }
+        }
+    ]
+]
